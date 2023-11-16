@@ -2,6 +2,9 @@
 
 <ion-content [fullscreen]="true">
 
+
+
+
    
 
 
@@ -10,7 +13,9 @@
 <ion-footer>
 
 
+
     <ion-card-header>
+      
       <ion-row>
         <ion-icon name="person-circle-outline" style="font-size: 40px; padding: 10px 0; "></ion-icon>
          <h1 style="font-size: 20px; padding: 0 15px; ">@Joxo</h1>
@@ -22,7 +27,7 @@
     <ion-card-header>
       <ion-row>
      <ion-col>Descripcion</ion-col>
-      <ion-icon name="ellipsis-vertical"></ion-icon>
+      <ion-icon name="ellipsis-vertical" id="open-modal-a"></ion-icon>
     </ion-row>
   </ion-card-header>
 
@@ -31,6 +36,58 @@
    <ion-col>#ToJob</ion-col>
   </ion-row>
 </ion-card-header>
+
+
+<ion-modal
+trigger="open-modal-a"
+[initialBreakpoint]="0.20"
+[breakpoints]="[0, 0.25, 0.5, 0.75]"
+handleBehavior="cycle"
+>
+<ng-template>
+  <ion-content class="ion-padding">
+    <div class="ion-margin-top">
+
+      <ion-grid>
+        <ion-row>
+          <ion-col class="col"><ion-icon name="bookmark-outline"></ion-icon></ion-col>
+          <ion-col class="col"><ion-icon name="eye-off"></ion-icon></ion-col>
+          <ion-col class="col"><ion-icon name="alert-outline" style=" color: red;"></ion-icon></ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col class="col" >Guardar</ion-col>
+          <ion-col class="col">Ocultar</ion-col>
+          <ion-col class="col" style="color: red;" id="open-modal">Reportar</ion-col>
+        </ion-row>
+      </ion-grid>
+
+    </div>
+  </ion-content>
+</ng-template>
+
+
+
+<ion-modal
+trigger="open-modal"
+[initialBreakpoint]="0.25"
+[breakpoints]="[0, 0.25, 0.5, 0.75]"
+handleBehavior="cycle"
+>
+<ng-template>
+  <ion-content class="ion-padding">
+    <div class="ion-margin-top">
+      <ion-label>Click the handle above to advance to the next breakpoint.</ion-label>
+    </div>
+  </ion-content>
+</ng-template>
+</ion-modal>
+
+</ion-modal>
+
+
+
+
 
 
 </ion-footer>

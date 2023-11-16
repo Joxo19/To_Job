@@ -13,6 +13,14 @@ const routes: Routes = [
   {
     path: 'registrer',
     loadChildren: () => import('./registrer/registrer.module').then( m => m.RegistrerPageModule)
+  },
+  {
+    path: 'edit-perfil',
+    loadChildren: () => import('./edit-perfil/edit-perfil.module').then( m => m.EditPerfilPageModule)
+  },
+  {
+    path: 'upload-video',
+    loadChildren: () => import('./upload-video/upload-video.module').then( m => m.UploadVideoPageModule)
   }
 ];
 @NgModule({
