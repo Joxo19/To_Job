@@ -1,41 +1,43 @@
+<ion-toolbar class="text-overlay">
+
+  <ion-buttons slot="secondary">
+    <ion-button [routerLink]="['/tabs/tab2']">
+      <ion-icon slot="icon-only" name="search"></ion-icon>
+    </ion-button>
+  </ion-buttons>
+  <ion-title>To Job</ion-title>
 
 
-<ion-content [fullscreen]="true">
-
-
-
-
-   
-
-
-</ion-content>
-
-<ion-footer>
+</ion-toolbar>
 
 
 
-    <ion-card-header>
+<div class="image-container">
+
+  <img src="https://ionicframework.com/docs/img/demos/card-media.png" alt="Descripción de la imagen" width="100%" height="100%" style="position: relative;">
+
+</div>
+
+
+
+<ion-toolbar class="text-overlay-f">
+
       
-      <ion-row>
-        <ion-icon name="person-circle-outline" style="font-size: 40px; padding: 10px 0; "></ion-icon>
-         <h1 style="font-size: 20px; padding: 0 15px; ">@Joxo</h1>
-          <ion-col><ion-button shape="round" fill="outline" >Seguir</ion-button></ion-col>
-          <ion-icon name="heart-outline" style="font-size: 40px;"></ion-icon>
-      </ion-row>
-       </ion-card-header>
-
-    <ion-card-header>
-      <ion-row>
-     <ion-col>Descripcion</ion-col>
-      <ion-icon name="ellipsis-vertical" id="open-modal-a"></ion-icon>
-    </ion-row>
-  </ion-card-header>
-
-  <ion-card-header>
     <ion-row>
-   <ion-col>#ToJob</ion-col>
+      <ion-icon name="person-circle-outline" style="font-size: 40px; padding: 10px 0; "></ion-icon>
+       <h1 style="font-size: 20px; padding: 0 15px; ">@Joxo</h1>
+        <ion-col><ion-button shape="round" fill="outline" >Seguir</ion-button></ion-col>
+        <ion-icon name="heart-outline" style="font-size: 40px;"></ion-icon>
+    </ion-row>
+
+    <ion-row>
+   <ion-col>Descripcion</ion-col>
+    <ion-icon name="ellipsis-vertical" id="open-modal-a"></ion-icon>
   </ion-row>
-</ion-card-header>
+
+  <ion-row>
+ <ion-col>#ToJob</ion-col>
+</ion-row>
 
 
 <ion-modal
@@ -45,49 +47,91 @@ trigger="open-modal-a"
 handleBehavior="cycle"
 >
 <ng-template>
-  <ion-content class="ion-padding">
-    <div class="ion-margin-top">
+<ion-content class="ion-padding">
+  <div class="ion-margin-top">
 
-      <ion-grid>
-        <ion-row>
-          <ion-col class="col"><ion-icon name="bookmark-outline"></ion-icon></ion-col>
-          <ion-col class="col"><ion-icon name="eye-off"></ion-icon></ion-col>
-          <ion-col class="col"><ion-icon name="alert-outline" style=" color: red;"></ion-icon></ion-col>
-        </ion-row>
+    <ion-grid>
+      <ion-row>
+        <ion-col class="col"><ion-icon name="bookmark-outline" id="open-modal-g"></ion-icon></ion-col>
+        <ion-col class="col"><ion-icon name="eye-off" id="open-modal-o"></ion-icon></ion-col>
+        <ion-col class="col"><ion-icon name="alert-outline" style=" color: red;" id="open-modal-r"></ion-icon></ion-col>
+      </ion-row>
 
-        <ion-row>
-          <ion-col class="col" >Guardar</ion-col>
-          <ion-col class="col">Ocultar</ion-col>
-          <ion-col class="col" style="color: red;" id="open-modal">Reportar</ion-col>
-        </ion-row>
-      </ion-grid>
+      <ion-row>
+        <ion-col class="col" >Guardar</ion-col>
+        <ion-col class="col">Ocultar</ion-col>
+        <ion-col class="col" style="color: red;">Reportar</ion-col>
+      </ion-row>
+    </ion-grid>
 
-    </div>
-  </ion-content>
-</ng-template>
-
+  </div>
+</ion-content>
 
 
 <ion-modal
-trigger="open-modal"
+trigger="open-modal-o"
 [initialBreakpoint]="0.25"
 [breakpoints]="[0, 0.25, 0.5, 0.75]"
 handleBehavior="cycle"
 >
 <ng-template>
-  <ion-content class="ion-padding">
-    <div class="ion-margin-top">
-      <ion-label>Click the handle above to advance to the next breakpoint.</ion-label>
-    </div>
-  </ion-content>
+<ion-content class="ion-padding">
+  <div class="ion-margin-top">
+    <ion-label>Click the handle above to advance to the next breakpoint.</ion-label>
+  </div>
+</ion-content>
 </ng-template>
 </ion-modal>
 
+<ion-modal
+trigger="open-modal-g"
+[initialBreakpoint]="0.40"
+[breakpoints]="[0, 0.25, 0.5, 0.75]"
+handleBehavior="cycle"
+>
+<ng-template>
+<ion-content color="light">
+
+
+
+  <ion-list [inset]="true" lines="none">
+    <ion-item>
+      <ion-checkbox slot="start" aria-label="Toggle task completion"></ion-checkbox>
+      <ion-input aria-label="Task name" value="Get eggs"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-checkbox slot="start" aria-label="Toggle task completion"></ion-checkbox>
+      <ion-input aria-label="Task name" value="Get milk"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-checkbox slot="start" aria-label="Toggle task completion"></ion-checkbox>
+      <ion-input aria-label="Task name" value="Take out compost"></ion-input>
+    </ion-item>
+  </ion-list>
+</ion-content>
+</ng-template>
+</ion-modal>
+
+<ion-modal
+trigger="open-modal-r"
+[initialBreakpoint]="0.25"
+[breakpoints]="[0, 0.25, 0.5, 0.75]"
+handleBehavior="cycle"
+>
+<ng-template>
+<ion-content class="ion-padding">
+  <div class="ion-margin-top">
+    <ion-label>Click the handle above to advance to the next breakpoint.</ion-label>
+  </div>
+</ion-content>
+</ng-template>
 </ion-modal>
 
 
 
+</ng-template>
+
+</ion-modal>
 
 
-
-</ion-footer>
+</ion-toolbar>
