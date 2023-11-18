@@ -53,14 +53,14 @@ handleBehavior="cycle"
     <ion-grid>
       <ion-row>
         <ion-col class="col"><ion-icon name="bookmark-outline" id="open-modal-g"></ion-icon></ion-col>
-        <ion-col class="col"><ion-icon name="eye-off" id="open-modal-o"></ion-icon></ion-col>
+        <ion-col class="col"><ion-icon name="eye-off" id="open-toast"></ion-icon></ion-col>
         <ion-col class="col"><ion-icon name="alert-outline" style=" color: red;" id="open-modal-r"></ion-icon></ion-col>
       </ion-row>
 
       <ion-row>
-        <ion-col class="col" >Guardar</ion-col>
-        <ion-col class="col">Ocultar</ion-col>
-        <ion-col class="col" style="color: red;">Reportar</ion-col>
+        <ion-col class="col" id="open-modal-g">Guardar</ion-col>
+        <ion-col class="col" id="open-modal-o">Ocultar</ion-col>
+        <ion-col class="col" style="color: red;" id="open-modal-r">Reportar</ion-col>
       </ion-row>
     </ion-grid>
 
@@ -68,20 +68,9 @@ handleBehavior="cycle"
 </ion-content>
 
 
-<ion-modal
-trigger="open-modal-o"
-[initialBreakpoint]="0.25"
-[breakpoints]="[0, 0.25, 0.5, 0.75]"
-handleBehavior="cycle"
->
-<ng-template>
-<ion-content class="ion-padding">
-  <div class="ion-margin-top">
-    <ion-label>Click the handle above to advance to the next breakpoint.</ion-label>
-  </div>
-</ion-content>
-</ng-template>
-</ion-modal>
+
+<ion-toast trigger="open-toast" message="Ya no se mostraran publicaciones relacionadas" [duration]="2000"></ion-toast>
+
 
 <ion-modal
 trigger="open-modal-g"
@@ -94,7 +83,24 @@ handleBehavior="cycle"
 
 
 
-  <ion-list [inset]="true" lines="none">
+  <ion-list lines="none" style="display: flex; flex-direction: column; align-items: center; justify-content: center;  padding-top:20px ;">
+      <ion-item>
+        <ion-icon name="bookmark-sharp" style="font-size: 50px;"></ion-icon>
+      </ion-item>
+      <ion-item>
+        <h3>Guardado</h3>
+      </ion-item>
+  </ion-list>
+
+
+  <ion-list lines="none">
+    <ion-item>
+      <h2>Agregar a colección</h2>
+    </ion-item>
+    <ion-button fill="clear" slot="end">Crea nueva</ion-button>
+  </ion-list>
+
+  <ion-list lines="none">
     <ion-item>
       <ion-checkbox slot="start" aria-label="Toggle task completion"></ion-checkbox>
       <ion-input aria-label="Task name" value="Get eggs"></ion-input>
@@ -112,17 +118,49 @@ handleBehavior="cycle"
 </ng-template>
 </ion-modal>
 
+
+
 <ion-modal
 trigger="open-modal-r"
-[initialBreakpoint]="0.25"
+[initialBreakpoint]="0.65"
 [breakpoints]="[0, 0.25, 0.5, 0.75]"
 handleBehavior="cycle"
 >
 <ng-template>
 <ion-content class="ion-padding">
   <div class="ion-margin-top">
-    <ion-label>Click the handle above to advance to the next breakpoint.</ion-label>
-  </div>
+
+    <ion-list lines="none">
+      <ion-item>
+        <h1>Selecciona un problema</h1>
+      </ion-item>
+      <ion-item>
+        <ion-label>Recuerda que tu denuncia es anonima </ion-label>
+      </ion-item>
+    </ion-list>
+
+
+    <ion-list lines="none">
+      <ion-item>
+        <ion-label>Spam</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>Desnudos o actividad sexual</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>Lenguaje que incita el odio</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>Informacion falsa</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>Estafa o fraude</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-input label="Otro" placeholder="Escribelo"></ion-input>
+      </ion-item>
+    </ion-list>
+    </div>
 </ion-content>
 </ng-template>
 </ion-modal>
